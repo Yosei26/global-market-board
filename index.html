@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10171e">
+    <meta name="description" content="世界の株価指数、為替、商品、暗号資産をチャートで一覧できるマーケットボード">
+    <title>世界マーケットボード</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="app-icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=51">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-mini-chart.js"></script>
+    <script src="app.js?v=51" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <button class="brand" id="brandHome" type="button" aria-label="一覧へ戻る">
+        <span class="brand-mark"><i data-lucide="chart-candlestick"></i></span>
+        <span>
+          <strong>世界マーケットボード</strong>
+          <small>GLOBAL MARKET BOARD</small>
+        </span>
+      </button>
+
+      <nav class="view-switch" aria-label="表示切替">
+        <button type="button" data-view="overview" class="is-active">
+          <i data-lucide="layout-grid"></i><span>チャート一覧</span>
+        </button>
+        <button type="button" data-view="detail">
+          <i data-lucide="chart-no-axes-combined"></i><span>詳細チャート</span>
+        </button>
+      </nav>
+
+      <div class="header-status">
+        <span class="network-status" id="networkStatus">
+          <span class="status-dot"></span>
+          <span id="networkText">接続中</span>
+        </span>
+        <time id="clock" datetime="">--:--:-- JST</time>
+        <button class="icon-button" id="themeToggle" type="button" title="配色切替" aria-label="配色切替">
+          <i data-lucide="moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="view-page overview-page is-active" id="overviewPage" aria-labelledby="overviewTitle">
+        <div class="overview-toolbar">
+          <div>
+            <p class="eyebrow">MARKET OVERVIEW</p>
+            <h1 id="overviewTitle">世界のマーケット</h1>
+          </div>
+          <label class="search-field">
+            <i data-lucide="search"></i>
+            <input id="marketSearch" type="search" placeholder="指標・為替・商品を検索" autocomplete="off">
+          </label>
+        </div>
+
+        <div class="category-tabs" id="categoryTabs" aria-label="市場区分"></div>
+
+        <section class="session-strip" aria-label="取引時間">
+          <div class="session-label"><i data-lucide="clock-3"></i><span>主要市場</span></div>
+          <div id="sessions"></div>
+          <span class="updated-at" id="lastRefresh">更新 --:--</span>
+        </section>
+
+        <div class="chart-groups" id="overviewGroups"></div>
+      </section>
+
+      <section class="view-page detail-page" id="detailPage" aria-labelledby="activeName">
+        <div class="detail-toolbar">
+          <button class="back-button" id="backToOverview" type="button">
+            <i data-lucide="arrow-left"></i><span>チャート一覧</span>
+          </button>
+        </div>
+
+        <div class="detail-layout">
+          <section class="detail-main">
+            <div class="instrument-header">
+              <div class="instrument-title">
+                <div class="instrument-meta">
+                  <span id="activeRegion">日本</span>
+                  <span class="type-badge" id="activeType">先物</span>
+                </div>
+                <h1 id="activeName">日経225先物</h1>
+                <p id="activeSymbol">OSE:NK2251!</p>
+              </div>
+
+              <div class="instrument-actions">
+                <div class="interval-control" id="intervalControl" aria-label="時間足">
+                  <button type="button" data-interval="15" class="is-active">15分</button>
+                  <button type="button" data-interval="60">1時間</button>
+                  <button type="button" data-interval="D">日足</button>
+                  <button type="button" data-interval="W">週足</button>
+                </div>
+                <button class="icon-button" id="favoriteActive" type="button" title="お気に入り" aria-label="お気に入り">
+                  <i data-lucide="star"></i>
+                </button>
+                <a class="icon-button" id="openTradingView" href="#" target="_blank" rel="noopener noreferrer" title="TradingViewで開く" aria-label="TradingViewで開く">
+                  <i data-lucide="external-link"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="chart-panel">
+              <div class="chart-statusbar">
+                <span class="data-source"><i data-lucide="database"></i><span id="sourceText">TradingView / OSE</span></span>
+                <span id="delayText">15分遅延</span>
+              </div>
+              <div id="chart" class="chart-host" aria-live="polite"></div>
+            </div>
+          </section>
+
+          <aside class="related-panel">
+            <div class="section-heading">
+              <h2>同じ市場の指標</h2>
+              <span id="relatedCount">0</span>
+            </div>
+            <div id="relatedMarkets"></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>TradingView提供データを利用</span>
+      <span>価格は参考値・遅延データ・CFDを含みます</span>
+    </footer>
+
+    <noscript>このサイトの表示にはJavaScriptが必要です。</noscript>
+  </body>
+</html>
