@@ -19,50 +19,42 @@ TradingViewウィジェットを使い、株価指数、為替、商品、暗号
 
 | 項目 | 設定値 |
 | --- | --- |
-| Framework Preset | `Other`または未指定 |
-| Root / Base Directory | リポジトリ直下 |
+| 公開先 | Vercel |
+| 本番URL | `https://global-market-board.vercel.app/` |
+| Framework Preset | `Other` |
+| Root Directory | リポジトリ直下 |
 | Build Command | なし（空欄） |
 | Install Command | なし（空欄） |
-| Output / Publish Directory | `.`（リポジトリ直下） |
+| Output Directory | `.`（リポジトリ直下） |
 | 環境変数 | なし |
 
 TradingViewとLucideはブラウザから外部CDNへ直接接続します。APIキーや`.env`ファイルは使用していません。
 
-## Vercelへのデプロイ
+## GitHubとVercelの運用方針
 
-1. このフォルダをGitHub、GitLab、またはBitbucketのリポジトリへ登録します。
-2. Vercelで`Add New Project`を選び、リポジトリをImportします。
-3. `Framework Preset`を`Other`にします。
-4. `Build Command`と`Install Command`は空欄にします。
-5. `Output Directory`は`.`のままにします。
-6. 環境変数は登録せず、`Deploy`を実行します。
+- GitHubリポジトリ名は`global-market-board`です。
+- GitHubはコードの保管、変更履歴、Vercelへのデプロイ元として使用します。
+- GitHubリポジトリはPrivateで運用します。
+- VercelのGit連携がPrivateリポジトリへアクセスできる状態を維持します。
+- VercelはGitHubの本番ブランチへのpushを検知して自動デプロイします。
+- 公開先はVercelに一本化し、GitHub PagesとNetlifyは使用しません。
+- 通常運用ではVercel CLIから直接デプロイせず、GitHub経由の自動デプロイを使用します。
 
-Vercel CLIを使用する場合は、プロジェクト直下で次を実行します。
+## 今後の更新手順
 
-```powershell
-vercel --prod
-```
+### 1. 修正
 
-`vercel.json`は不要です。
+ローカルのプロジェクトフォルダでHTML、CSS、JavaScript、画像などを修正します。
 
-## Netlifyへのデプロイ
+次の情報をコードへ直接書かないでください。
 
-1. このフォルダをGitHub、GitLab、Bitbucket、またはAzure DevOpsのリポジトリへ登録します。
-2. Netlifyで`Add new project`からリポジトリを選択します。
-3. `Base directory`は空欄（リポジトリ直下）にします。
-4. `Build command`は空欄にします。
-5. `Publish directory`に`.`を指定します。
-6. 環境変数は登録せず、デプロイを実行します。
+- APIキー、アクセストークン、パスワード、個人情報
+- `C:\Users\...`などのローカル絶対パス
+- `file://`で始まるローカルURL
 
-Netlify CLIを使用する場合は、プロジェクト直下で次を実行します。
+CSS、JavaScript、画像などのサイト内ファイルは、引き続き相対パスで参照します。
 
-```powershell
-netlify deploy --prod --dir .
-```
-
-`netlify.toml`は不要です。
-
-## ローカル確認
+### 2. ローカル確認
 
 ビルドは不要です。Service Workerと外部ウィジェットを正しく確認するため、ファイルを直接開かずHTTPサーバーを使用します。
 
@@ -70,14 +62,43 @@ netlify deploy --prod --dir .
 python -m http.server 5175 --bind 127.0.0.1
 ```
 
-ブラウザで`http://127.0.0.1:5175/`を開きます。
+ブラウザで`http://127.0.0.1:5175/`を開き、次を確認します。
 
-## 公開後の確認
+- 32枚のマーケットカードが表示される
+- TradingViewの価格、騰落率、チャートが表示される
+- ダーク／ライトテーマの文字が読める
+- PCとスマートフォンのレイアウトが崩れていない
+- ブラウザのコンソールにJavaScriptエラーがない
+
+### 3. GitHubへcommit／push
+
+変更内容を確認してから、変更したファイルだけをcommitします。
+
+```powershell
+git status
+git diff
+git add <変更したファイル>
+git commit -m "<変更内容を表すメッセージ>"
+git push origin main
+```
+
+本番ブランチ名が`main`以外の場合は、実際のブランチ名へ置き換えます。APIキーやローカル設定ファイルがステージされていないことを、commit前に必ず確認します。
+
+### 4. Vercel自動デプロイ
+
+GitHubへのpush後、Vercel Dashboardで対象Deploymentが`Ready`になるまで待ちます。失敗した場合はVercelのBuild Logsを確認し、成功するまで本番確認へ進みません。
+
+### 5. 本番確認
+
+`https://global-market-board.vercel.app/`を開き、次を確認します。
 
 - HTTPSでページが表示されること
 - 32枚のマーケットカードが表示されること
 - TradingViewの価格と騰落率が表示されること
 - ダーク／ライトテーマの文字が読めること
 - ブラウザのコンソールにJavaScriptエラーがないこと
+- 強制再読み込み後も最新のCSSとJavaScriptが反映されること
 
 相場データはTradingViewウィジェット側から配信されます。銘柄や地域により遅延、取引時間外表示、提供制限が発生する場合があります。
+
+更新作業の完了報告には、変更内容の要約、ローカル確認結果、本番確認結果、推奨commit messageを含めます。
