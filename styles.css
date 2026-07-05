@@ -961,6 +961,145 @@ input:focus-visible {
   font-size: 9px;
 }
 
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+.info-page-body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.info-header {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.info-header-inner,
+.info-main,
+.info-footer-inner {
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.info-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.info-brand {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.info-main {
+  flex: 1;
+  padding: 44px 0 56px;
+}
+
+.info-main h1 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  letter-spacing: 0;
+}
+
+.info-lead {
+  margin: 0 0 32px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.info-section {
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+
+.info-section h2 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  letter-spacing: 0;
+}
+
+.info-section p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.info-section p + p {
+  margin-top: 10px;
+}
+
+.info-page-footer {
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.info-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 62px;
+}
+
+.info-footer-inner .footer-links {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+@media (max-width: 720px) {
+  .info-main {
+    padding: 32px 0 42px;
+  }
+
+  .info-main h1 {
+    font-size: 23px;
+  }
+
+  .info-footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px 0;
+  }
+
+  .info-footer-inner .footer-links {
+    justify-content: flex-start;
+  }
+}
+
 @media (max-width: 1050px) {
   .app-header {
     grid-template-columns: minmax(210px, 1fr) auto auto;
