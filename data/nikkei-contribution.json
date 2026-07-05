@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "data_status": "sample",
+  "is_trial": true,
+  "as_of": "2026-07-03",
+  "previous_date": "2026-07-02",
+  "generated_at": "2026-07-05T17:31:12+00:00",
+  "source": "illustrative_test_fixture",
+  "methodology": {
+    "formula": "(close - previous_close) * paf / divisor",
+    "divisor": 30.0,
+    "coverage": "partial",
+    "coverage_count": 25
+  },
+  "total_contribution_points": 37.1,
+  "leaders": [
+    {
+      "code": "6146",
+      "name": "ディスコ",
+      "paf": 1.0,
+      "previous_close": 42000.0,
+      "close": 42750.0,
+      "price_change": 750.0,
+      "change_percent": 1.7857,
+      "contribution_points": 25.0
+    },
+    {
+      "code": "9983",
+      "name": "ファーストリテイリング",
+      "paf": 1.0,
+      "previous_close": 50000.0,
+      "close": 50500.0,
+      "price_change": 500.0,
+      "change_percent": 1.0,
+      "contribution_points": 16.6667
+    },
+    {
+      "code": "6857",
+      "name": "アドバンテスト",
+      "paf": 1.0,
+      "previous_close": 9200.0,
+      "close": 9480.0,
+      "price_change": 280.0,
+      "change_percent": 3.0435,
+      "contribution_points": 9.3333
+    },
+    {
+      "code": "9984",
+      "name": "ソフトバンクグループ",
+      "paf": 1.0,
+      "previous_close": 10500.0,
+      "close": 10720.0,
+      "price_change": 220.0,
+      "change_percent": 2.0952,
+      "contribution_points": 7.3333
+    },
+    {
+      "code": "6098",
+      "name": "リクルートホールディングス",
+      "paf": 1.0,
+      "previous_close": 8900.0,
+      "close": 8990.0,
+      "price_change": 90.0,
+      "change_percent": 1.0112,
+      "contribution_points": 3.0
+    }
+  ],
+  "laggards": [
+    {
+      "code": "6920",
+      "name": "レーザーテック",
+      "paf": 1.0,
+      "previous_close": 16500.0,
+      "close": 15900.0,
+      "price_change": -600.0,
+      "change_percent": -3.6364,
+      "contribution_points": -20.0
+    },
+    {
+      "code": "8035",
+      "name": "東京エレクトロン",
+      "paf": 1.0,
+      "previous_close": 28000.0,
+      "close": 27650.0,
+      "price_change": -350.0,
+      "change_percent": -1.25,
+      "contribution_points": -11.6667
+    },
+    {
+      "code": "6367",
+      "name": "ダイキン工業",
+      "paf": 1.0,
+      "previous_close": 18000.0,
+      "close": 17820.0,
+      "price_change": -180.0,
+      "change_percent": -1.0,
+      "contribution_points": -6.0
+    },
+    {
+      "code": "4063",
+      "name": "信越化学工業",
+      "paf": 1.0,
+      "previous_close": 5100.0,
+      "close": 5060.0,
+      "price_change": -40.0,
+      "change_percent": -0.7843,
+      "contribution_points": -1.3333
+    },
+    {
+      "code": "8058",
+      "name": "三菱商事",
+      "paf": 1.0,
+      "previous_close": 2950.0,
+      "close": 2915.0,
+      "price_change": -35.0,
+      "change_percent": -1.1864,
+      "contribution_points": -1.1667
+    }
+  ],
+  "items": [
+    {
+      "code": "6146",
+      "name": "ディスコ",
+      "paf": 1.0,
+      "previous_close": 42000.0,
+      "close": 42750.0,
+      "price_change": 750.0,
+      "change_percent": 1.7857,
+      "contribution_points": 25.0
+    },
+    {
+      "code": "9983",
+      "name": "ファーストリテイリング",
+      "paf": 1.0,
+      "previous_close": 50000.0,
+      "close": 50500.0,
+      "price_change": 500.0,
+      "change_percent": 1.0,
+      "contribution_points": 16.6667
+    },
+    {
+      "code": "6857",
+      "name": "アドバンテスト",
+      "paf": 1.0,
+      "previous_close": 9200.0,
+      "close": 9480.0,
+      "price_change": 280.0,
+      "change_percent": 3.0435,
+      "contribution_points": 9.3333
+    },
+    {
+      "code": "9984",
+      "name": "ソフトバンクグループ",
+      "paf": 1.0,
+      "previous_close": 10500.0,
+      "close": 10720.0,
+      "price_change": 220.0,
+      "change_percent": 2.0952,
+      "contribution_points": 7.3333
+    },
+    {
+      "code": "6098",
+      "name": "リクルートホールディングス",
+      "paf": 1.0,
+      "previous_close": 8900.0,
+      "close": 8990.0,
+      "price_change": 90.0,
+      "change_percent": 1.0112,
+      "contribution_points": 3.0
+    },
+    {
+      "code": "4519",
+      "name": "中外製薬",
+      "paf": 1.0,
+      "previous_close": 6900.0,
+      "close": 6990.0,
+      "price_change": 90.0,
+      "change_percent": 1.3043,
+      "contribution_points": 3.0
+    },
+    {
+      "code": "6501",
+      "name": "日立製作所",
+      "paf": 1.0,
+      "previous_close": 4150.0,
+      "close": 4230.0,
+      "price_change": 80.0,
+      "change_percent": 1.9277,
+      "contribution_points": 2.6667
+    },
+    {
+      "code": "6954",
+      "name": "ファナック",
+      "paf": 1.0,
+      "previous_close": 4300.0,
+      "close": 4360.0,
+      "price_change": 60.0,
+      "change_percent": 1.3953,
+      "contribution_points": 2.0
+    },
+    {
+      "code": "6758",
+      "name": "ソニーグループ",
+      "paf": 1.0,
+      "previous_close": 3650.0,
+      "close": 3710.0,
+      "price_change": 60.0,
+      "change_percent": 1.6438,
+      "contribution_points": 2.0
+    },
+    {
+      "code": "6645",
+      "name": "オムロン",
+      "paf": 1.0,
+      "previous_close": 3900.0,
+      "close": 3960.0,
+      "price_change": 60.0,
+      "change_percent": 1.5385,
+      "contribution_points": 2.0
+    },
+    {
+      "code": "8316",
+      "name": "三井住友フィナンシャルグループ",
+      "paf": 1.0,
+      "previous_close": 3650.0,
+      "close": 3705.0,
+      "price_change": 55.0,
+      "change_percent": 1.5068,
+      "contribution_points": 1.8333
+    },
+    {
+      "code": "4543",
+      "name": "テルモ",
+      "paf": 1.0,
+      "previous_close": 2700.0,
+      "close": 2745.0,
+      "price_change": 45.0,
+      "change_percent": 1.6667,
+      "contribution_points": 1.5
+    },
+    {
+      "code": "4901",
+      "name": "富士フイルムホールディングス",
+      "paf": 1.0,
+      "previous_close": 3200.0,
+      "close": 3245.0,
+      "price_change": 45.0,
+      "change_percent": 1.4062,
+      "contribution_points": 1.5
+    },
+    {
+      "code": "6988",
+      "name": "日東電工",
+      "paf": 1.0,
+      "previous_close": 2650.0,
+      "close": 2690.0,
+      "price_change": 40.0,
+      "change_percent": 1.5094,
+      "contribution_points": 1.3333
+    },
+    {
+      "code": "7203",
+      "name": "トヨタ自動車",
+      "paf": 1.0,
+      "previous_close": 2550.0,
+      "close": 2585.0,
+      "price_change": 35.0,
+      "change_percent": 1.3725,
+      "contribution_points": 1.1667
+    },
+    {
+      "code": "7267",
+      "name": "本田技研工業",
+      "paf": 1.0,
+      "previous_close": 1450.0,
+      "close": 1468.0,
+      "price_change": 18.0,
+      "change_percent": 1.2414,
+      "contribution_points": 0.6
+    },
+    {
+      "code": "6762",
+      "name": "TDK",
+      "paf": 1.0,
+      "previous_close": 1850.0,
+      "close": 1825.0,
+      "price_change": -25.0,
+      "change_percent": -1.3514,
+      "contribution_points": -0.8333
+    },
+    {
+      "code": "6971",
+      "name": "京セラ",
+      "paf": 1.0,
+      "previous_close": 1750.0,
+      "close": 1725.0,
+      "price_change": -25.0,
+      "change_percent": -1.4286,
+      "contribution_points": -0.8333
+    },
+    {
+      "code": "9433",
+      "name": "KDDI",
+      "paf": 1.0,
+      "previous_close": 2500.0,
+      "close": 2470.0,
+      "price_change": -30.0,
+      "change_percent": -1.2,
+      "contribution_points": -1.0
+    },
+    {
+      "code": "7733",
+      "name": "オリンパス",
+      "paf": 1.0,
+      "previous_close": 1750.0,
+      "close": 1720.0,
+      "price_change": -30.0,
+      "change_percent": -1.7143,
+      "contribution_points": -1.0
+    },
+    {
+      "code": "8058",
+      "name": "三菱商事",
+      "paf": 1.0,
+      "previous_close": 2950.0,
+      "close": 2915.0,
+      "price_change": -35.0,
+      "change_percent": -1.1864,
+      "contribution_points": -1.1667
+    },
+    {
+      "code": "4063",
+      "name": "信越化学工業",
+      "paf": 1.0,
+      "previous_close": 5100.0,
+      "close": 5060.0,
+      "price_change": -40.0,
+      "change_percent": -0.7843,
+      "contribution_points": -1.3333
+    },
+    {
+      "code": "6367",
+      "name": "ダイキン工業",
+      "paf": 1.0,
+      "previous_close": 18000.0,
+      "close": 17820.0,
+      "price_change": -180.0,
+      "change_percent": -1.0,
+      "contribution_points": -6.0
+    },
+    {
+      "code": "8035",
+      "name": "東京エレクトロン",
+      "paf": 1.0,
+      "previous_close": 28000.0,
+      "close": 27650.0,
+      "price_change": -350.0,
+      "change_percent": -1.25,
+      "contribution_points": -11.6667
+    },
+    {
+      "code": "6920",
+      "name": "レーザーテック",
+      "paf": 1.0,
+      "previous_close": 16500.0,
+      "close": 15900.0,
+      "price_change": -600.0,
+      "change_percent": -3.6364,
+      "contribution_points": -20.0
+    }
+  ],
+  "notice": "Trial output for pipeline verification. It is not an official Nikkei 225 contribution calculation and must not be used for investment decisions."
+}
