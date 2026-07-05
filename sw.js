@@ -1,4 +1,4 @@
-const CACHE_NAME = "global-market-board-v53";
+const CACHE_NAME = "global-market-board-v54";
 const APP_SHELL = [
   "./",
   "./index.html",
