@@ -1,4 +1,4 @@
-const CACHE_NAME = "global-market-board-v52";
+const CACHE_NAME = "global-market-board-v53";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -6,7 +6,11 @@ const APP_SHELL = [
   "./disclaimer.html",
   "./privacy.html",
   "./contact.html",
-  "./styles.css?v=52",
+  "./blog.html",
+  "./posts/nikkei225-cfd-vs-index.html",
+  "./posts/soxx-vs-sox.html",
+  "./posts/market-board-guide.html",
+  "./styles.css?v=53",
   "./app.js?v=51",
   "./manifest.webmanifest",
   "./app-icon.svg"

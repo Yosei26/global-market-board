@@ -1080,6 +1080,129 @@ input:focus-visible {
   justify-content: flex-end;
 }
 
+.blog-main {
+  width: min(860px, calc(100% - 32px));
+}
+
+.blog-list {
+  display: grid;
+  gap: 12px;
+}
+
+.blog-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+}
+
+.blog-card:hover {
+  border-color: var(--line-strong);
+  background: var(--surface-hover);
+}
+
+.article-meta {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.blog-card h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.blog-card h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.blog-card p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.article-main {
+  width: min(760px, calc(100% - 32px));
+}
+
+.article-main > header {
+  margin-bottom: 32px;
+}
+
+.article-main > header h1 {
+  margin-bottom: 12px;
+}
+
+.article-section {
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+
+.article-section h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.article-section h3 {
+  margin: 20px 0 8px;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.article-section p,
+.article-section li {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.article-section p {
+  margin: 0;
+}
+
+.article-section p + p {
+  margin-top: 12px;
+}
+
+.article-section ul {
+  margin: 10px 0 0;
+  padding-left: 22px;
+}
+
+.article-note {
+  margin-top: 28px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--green);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.article-note a {
+  color: var(--green);
+}
+
+.article-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.article-footer-nav a {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 @media (max-width: 720px) {
   .info-main {
     padding: 32px 0 42px;
@@ -1087,6 +1210,15 @@ input:focus-visible {
 
   .info-main h1 {
     font-size: 23px;
+  }
+
+  .blog-card {
+    padding: 16px;
+  }
+
+  .blog-card h2,
+  .article-section h2 {
+    font-size: 17px;
   }
 
   .info-footer-inner {
